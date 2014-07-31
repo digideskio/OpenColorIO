@@ -97,4 +97,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef max
 #endif
 
+// The new YAML is causing crashes on Windows
+#define OLDYAML
+
 #endif // INCLUDED_OCIO_OPENCOLORABI_H
