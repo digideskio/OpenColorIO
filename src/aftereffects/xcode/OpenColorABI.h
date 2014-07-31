@@ -97,4 +97,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef max
 #endif
 
+// We need to use OLDYAML in Xcode unless we want to use Boost
+#define OLDYAML
+
 #endif // INCLUDED_OCIO_OPENCOLORABI_H
