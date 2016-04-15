@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A34F0451CC05F3E00D2FE73 /* Display.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A34F0431CC05F3E00D2FE73 /* Display.cpp */; };
+		2A34F0461CC05F3E00D2FE73 /* Display.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A34F0441CC05F3E00D2FE73 /* Display.h */; };
 		2A7CACBB15536CD700F52C98 /* FileFormatIridasLook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CACB515536CD700F52C98 /* FileFormatIridasLook.cpp */; };
 		2A7CACBC15536CD700F52C98 /* LookParse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CACB615536CD700F52C98 /* LookParse.cpp */; };
 		2A7CACBD15536CD700F52C98 /* LookParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7CACB715536CD700F52C98 /* LookParse.h */; };
@@ -100,6 +102,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A34F0431CC05F3E00D2FE73 /* Display.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Display.cpp; sourceTree = "<group>"; };
+		2A34F0441CC05F3E00D2FE73 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		2A7CACB515536CD700F52C98 /* FileFormatIridasLook.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileFormatIridasLook.cpp; sourceTree = "<group>"; };
 		2A7CACB615536CD700F52C98 /* LookParse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LookParse.cpp; sourceTree = "<group>"; };
 		2A7CACB715536CD700F52C98 /* LookParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookParse.h; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 		2ACF567514776A1E00991ED5 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				2A34F0431CC05F3E00D2FE73 /* Display.cpp */,
+				2A34F0441CC05F3E00D2FE73 /* Display.h */,
 				2ACF567614776A1E00991ED5 /* AllocationOp.cpp */,
 				2ACF567714776A1E00991ED5 /* AllocationOp.h */,
 				2ACF567814776A1E00991ED5 /* AllocationTransform.cpp */,
@@ -373,6 +379,7 @@
 				2ACF573F14776B7000991ED5 /* OpenColorABI.h in Headers */,
 				2A7CACBD15536CD700F52C98 /* LookParse.h in Headers */,
 				2A7CACBF15536CD700F52C98 /* NoOps.h in Headers */,
+				2A34F0461CC05F3E00D2FE73 /* Display.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +492,7 @@
 				2A7CACBC15536CD700F52C98 /* LookParse.cpp in Sources */,
 				2A7CACBE15536CD700F52C98 /* NoOps.cpp in Sources */,
 				2A7CACC015536CD700F52C98 /* OpOptimizers.cpp in Sources */,
+				2A34F0451CC05F3E00D2FE73 /* Display.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +505,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = TIXML_USE_STL;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					TIXML_USE_STL,
+					OLDYAML,
+				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -507,7 +518,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -519,6 +530,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					TIXML_USE_STL,
+					OLDYAML,
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -528,7 +540,7 @@
 					"../../../ext/yaml-cpp/include",
 				);
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
