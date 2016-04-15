@@ -90,6 +90,7 @@ int main (int argc, const char* argv[])
     
     std::string dummystr;
     float dummyf1, dummyf2, dummyf3;
+	bool dummybool;
     
     ArgParse ap;
     ap.options("ociobakelut -- create a new LUT or icc profile from an OCIO config or lut file(s)\n\n"
@@ -115,6 +116,8 @@ int main (int argc, const char* argv[])
                "--offset10 %f %f %f", &dummyf1, &dummyf2, &dummyf3, "offset (10-bit)",
                "--power %f %f %f", &dummyf1, &dummyf2, &dummyf3, "power",
                "--sat %f", &dummyf1, "saturation (ASC-CDL luma coefficients)\n",
+			   "--log2lin", &dummybool, "Apply Cineon log2lin",
+			   "--lin2log", &dummybool, "Apply Cineon lin2log",
                "<SEPARATOR>", "Baking Options",
                "--format %s", &format, formatstr.c_str(),
                "--shapersize %d", &shapersize, "size of the shaper (default: format specific)",
@@ -530,6 +533,21 @@ parse_luts(int argc, const char *argv[])
             
             i += 1;
         }
+		else if(arg == "--log2lin" || arg == "-log2lin" || arg == "--lin2log" || arg == "-lin2log")
+		{
+			OCIO::LogTransformRcPtr t = OCIO::LogTransform::Create();
+			
+			if(arg == "--log2lin" || arg == "-log2lin")
+			{
+				t->setDirection(OCIO::TRANSFORM_DIR_FORWARD);
+			}
+			else
+				t->setDirection(OCIO::TRANSFORM_DIR_INVERSE);
+			
+			float base = t->getBase();
+			
+			groupTransform->push_back(t);
+		}
     }
     
     return groupTransform;

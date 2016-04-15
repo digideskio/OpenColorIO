@@ -14,6 +14,34 @@
 		2A60CADB1491A51C009D6DBF /* OpenColorIO_AE_GL_Cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A60CADA1491A51C009D6DBF /* OpenColorIO_AE_GL_Cocoa.mm */; };
 		2A60CB091491A9FF009D6DBF /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60CB081491A9FF009D6DBF /* AGL.framework */; };
 		2A60CB0B1491A9FF009D6DBF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60CB0A1491A9FF009D6DBF /* OpenGL.framework */; };
+		2A8B49021A6F2F13009DB210 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B49011A6F2F13009DB210 /* main.cpp */; };
+		2A8B49041A6F2F19009DB210 /* libOpenColorIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF56EE7147AD10E00F9968C /* libOpenColorIO.a */; };
+		2A8B49051A6F2F1C009DB210 /* libtinyxml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF56FFB147AE16A00F9968C /* libtinyxml.a */; };
+		2A8B49061A6F2F1F009DB210 /* libyaml.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF57001147AE16A00F9968C /* libyaml.a */; };
+		2A8B491C1A6F2F6B009DB210 /* argparse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B49161A6F2F6B009DB210 /* argparse.cpp */; };
+		2A8B491D1A6F2F6B009DB210 /* pystring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B49181A6F2F6B009DB210 /* pystring.cpp */; };
+		2A8B491E1A6F2F6B009DB210 /* strutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B491A1A6F2F6B009DB210 /* strutil.cpp */; };
+		2A8B49211A6F31CB009DB210 /* ocioicc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A0AF41554679400D5AEB7 /* ocioicc.cpp */; };
+		2A8B4C0C1A71C5DF009DB210 /* cmscam02.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BCC1A71C5DF009DB210 /* cmscam02.c */; };
+		2A8B4C0D1A71C5DF009DB210 /* cmscam97.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BCD1A71C5DF009DB210 /* cmscam97.c */; };
+		2A8B4C0E1A71C5DF009DB210 /* cmscgats.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BCE1A71C5DF009DB210 /* cmscgats.c */; };
+		2A8B4C0F1A71C5DF009DB210 /* cmscnvrt.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BCF1A71C5DF009DB210 /* cmscnvrt.c */; };
+		2A8B4C101A71C5DF009DB210 /* cmserr.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD01A71C5DF009DB210 /* cmserr.c */; };
+		2A8B4C111A71C5DF009DB210 /* cmsgamma.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD11A71C5DF009DB210 /* cmsgamma.c */; };
+		2A8B4C121A71C5DF009DB210 /* cmsgmt.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD21A71C5DF009DB210 /* cmsgmt.c */; };
+		2A8B4C131A71C5DF009DB210 /* cmsintrp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD31A71C5DF009DB210 /* cmsintrp.c */; };
+		2A8B4C141A71C5DF009DB210 /* cmsio1.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD41A71C5DF009DB210 /* cmsio1.c */; };
+		2A8B4C151A71C5DF009DB210 /* cmslut.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD51A71C5DF009DB210 /* cmslut.c */; };
+		2A8B4C161A71C5DF009DB210 /* cmsmatsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD61A71C5DF009DB210 /* cmsmatsh.c */; };
+		2A8B4C171A71C5DF009DB210 /* cmsmtrx.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD71A71C5DF009DB210 /* cmsmtrx.c */; };
+		2A8B4C181A71C5DF009DB210 /* cmsnamed.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD81A71C5DF009DB210 /* cmsnamed.c */; };
+		2A8B4C191A71C5DF009DB210 /* cmspack.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BD91A71C5DF009DB210 /* cmspack.c */; };
+		2A8B4C1A1A71C5DF009DB210 /* cmspcs.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDA1A71C5DF009DB210 /* cmspcs.c */; };
+		2A8B4C1B1A71C5DF009DB210 /* cmsps2.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDB1A71C5DF009DB210 /* cmsps2.c */; };
+		2A8B4C1C1A71C5DF009DB210 /* cmssamp.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDC1A71C5DF009DB210 /* cmssamp.c */; };
+		2A8B4C1D1A71C5DF009DB210 /* cmsvirt.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDD1A71C5DF009DB210 /* cmsvirt.c */; };
+		2A8B4C1E1A71C5DF009DB210 /* cmswtpnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDE1A71C5DF009DB210 /* cmswtpnt.c */; };
+		2A8B4C1F1A71C5DF009DB210 /* cmsxform.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A8B4BDF1A71C5DF009DB210 /* cmsxform.c */; };
 		2AF56B96147A431100F9968C /* OpenColorIO_AE_ArbData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AF56B8F147A431100F9968C /* OpenColorIO_AE_ArbData.cpp */; };
 		2AF56B99147A431100F9968C /* OpenColorIO_AE_PiPL.r in Rez */ = {isa = PBXBuildFile; fileRef = 2AF56B92147A431100F9968C /* OpenColorIO_AE_PiPL.r */; };
 		2AF56B9A147A431100F9968C /* OpenColorIO_AE_UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AF56B93147A431100F9968C /* OpenColorIO_AE_UI.cpp */; };
@@ -31,6 +59,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2A8B49081A6F2F35009DB210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF56FF0147AE16A00F9968C /* tinyxml.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ACF55431477682B00991ED5;
+			remoteInfo = tinyxml;
+		};
+		2A8B490A1A6F2F35009DB210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF56EE2147AD10E00F9968C /* OpenColorIO.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ACF567014776A0A00991ED5;
+			remoteInfo = OpenColorIO;
+		};
+		2A8B490C1A6F2F35009DB210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF999C0147E1DCA00FEB83B /* lcms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ACF9E55147824F500991ED5;
+			remoteInfo = lcms;
+		};
+		2A8B490E1A6F2F35009DB210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AF56FF3147AE16A00F9968C /* yaml.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ACF559B1477692300991ED5;
+			remoteInfo = yaml;
+		};
 		2AF56EE6147AD10E00F9968C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2AF56EE2147AD10E00F9968C /* OpenColorIO.xcodeproj */;
@@ -100,6 +156,36 @@
 		2A60CADA1491A51C009D6DBF /* OpenColorIO_AE_GL_Cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenColorIO_AE_GL_Cocoa.mm; path = ../../mac/OpenColorIO_AE_GL_Cocoa.mm; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		2A60CB081491A9FF009D6DBF /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
 		2A60CB0A1491A9FF009D6DBF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2A8B48FB1A6F2EF1009DB210 /* ociobakelut */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ociobakelut; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8B49011A6F2F13009DB210 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../apps/ociobakelut/main.cpp; sourceTree = SOURCE_ROOT; };
+		2A8B49161A6F2F6B009DB210 /* argparse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = argparse.cpp; sourceTree = "<group>"; };
+		2A8B49171A6F2F6B009DB210 /* argparse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argparse.h; sourceTree = "<group>"; };
+		2A8B49181A6F2F6B009DB210 /* pystring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pystring.cpp; sourceTree = "<group>"; };
+		2A8B49191A6F2F6B009DB210 /* pystring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pystring.h; sourceTree = "<group>"; };
+		2A8B491A1A6F2F6B009DB210 /* strutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strutil.cpp; sourceTree = "<group>"; };
+		2A8B491B1A6F2F6B009DB210 /* strutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strutil.h; sourceTree = "<group>"; };
+		2A8B4B5A1A71C5DF009DB210 /* icc34.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icc34.h; sourceTree = "<group>"; };
+		2A8B4B5C1A71C5DF009DB210 /* lcms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcms.h; sourceTree = "<group>"; };
+		2A8B4BCC1A71C5DF009DB210 /* cmscam02.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmscam02.c; sourceTree = "<group>"; };
+		2A8B4BCD1A71C5DF009DB210 /* cmscam97.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmscam97.c; sourceTree = "<group>"; };
+		2A8B4BCE1A71C5DF009DB210 /* cmscgats.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmscgats.c; sourceTree = "<group>"; };
+		2A8B4BCF1A71C5DF009DB210 /* cmscnvrt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmscnvrt.c; sourceTree = "<group>"; };
+		2A8B4BD01A71C5DF009DB210 /* cmserr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmserr.c; sourceTree = "<group>"; };
+		2A8B4BD11A71C5DF009DB210 /* cmsgamma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsgamma.c; sourceTree = "<group>"; };
+		2A8B4BD21A71C5DF009DB210 /* cmsgmt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsgmt.c; sourceTree = "<group>"; };
+		2A8B4BD31A71C5DF009DB210 /* cmsintrp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsintrp.c; sourceTree = "<group>"; };
+		2A8B4BD41A71C5DF009DB210 /* cmsio1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsio1.c; sourceTree = "<group>"; };
+		2A8B4BD51A71C5DF009DB210 /* cmslut.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmslut.c; sourceTree = "<group>"; };
+		2A8B4BD61A71C5DF009DB210 /* cmsmatsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsmatsh.c; sourceTree = "<group>"; };
+		2A8B4BD71A71C5DF009DB210 /* cmsmtrx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsmtrx.c; sourceTree = "<group>"; };
+		2A8B4BD81A71C5DF009DB210 /* cmsnamed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsnamed.c; sourceTree = "<group>"; };
+		2A8B4BD91A71C5DF009DB210 /* cmspack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmspack.c; sourceTree = "<group>"; };
+		2A8B4BDA1A71C5DF009DB210 /* cmspcs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmspcs.c; sourceTree = "<group>"; };
+		2A8B4BDB1A71C5DF009DB210 /* cmsps2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsps2.c; sourceTree = "<group>"; };
+		2A8B4BDC1A71C5DF009DB210 /* cmssamp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmssamp.c; sourceTree = "<group>"; };
+		2A8B4BDD1A71C5DF009DB210 /* cmsvirt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsvirt.c; sourceTree = "<group>"; };
+		2A8B4BDE1A71C5DF009DB210 /* cmswtpnt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmswtpnt.c; sourceTree = "<group>"; };
+		2A8B4BDF1A71C5DF009DB210 /* cmsxform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmsxform.c; sourceTree = "<group>"; };
 		2AF56B8F147A431100F9968C /* OpenColorIO_AE_ArbData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenColorIO_AE_ArbData.cpp; path = ../../OpenColorIO_AE_ArbData.cpp; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		2AF56B90147A431100F9968C /* OpenColorIO_AE_Dialogs_Cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenColorIO_AE_Dialogs_Cocoa.mm; path = ../../mac/OpenColorIO_AE_Dialogs_Cocoa.mm; sourceTree = SOURCE_ROOT; usesTabs = 0; };
 		2AF56B92147A431100F9968C /* OpenColorIO_AE_PiPL.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = OpenColorIO_AE_PiPL.r; path = ../../OpenColorIO_AE_PiPL.r; sourceTree = SOURCE_ROOT; usesTabs = 0; };
@@ -124,6 +210,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A8B48F91A6F2EF1009DB210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8B49041A6F2F19009DB210 /* libOpenColorIO.a in Frameworks */,
+				2A8B49051A6F2F1C009DB210 /* libtinyxml.a in Frameworks */,
+				2A8B49061A6F2F1F009DB210 /* libyaml.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4E618CA095A3CE80012CA3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,6 +237,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A8B49151A6F2F6B009DB210 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				2A8B49161A6F2F6B009DB210 /* argparse.cpp */,
+				2A8B49171A6F2F6B009DB210 /* argparse.h */,
+				2A8B49181A6F2F6B009DB210 /* pystring.cpp */,
+				2A8B49191A6F2F6B009DB210 /* pystring.h */,
+				2A8B491A1A6F2F6B009DB210 /* strutil.cpp */,
+				2A8B491B1A6F2F6B009DB210 /* strutil.h */,
+			);
+			name = share;
+			path = ../../../apps/share;
+			sourceTree = SOURCE_ROOT;
+		};
+		2A8B4B341A71C5DF009DB210 /* lcms-1.14 */ = {
+			isa = PBXGroup;
+			children = (
+				2A8B4B591A71C5DF009DB210 /* include */,
+				2A8B4BCB1A71C5DF009DB210 /* src */,
+			);
+			name = "lcms-1.14";
+			path = "../../../../ext/lcms-1.14";
+			sourceTree = SOURCE_ROOT;
+		};
+		2A8B4B591A71C5DF009DB210 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				2A8B4B5A1A71C5DF009DB210 /* icc34.h */,
+				2A8B4B5C1A71C5DF009DB210 /* lcms.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		2A8B4BCB1A71C5DF009DB210 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2A8B4BCC1A71C5DF009DB210 /* cmscam02.c */,
+				2A8B4BCD1A71C5DF009DB210 /* cmscam97.c */,
+				2A8B4BCE1A71C5DF009DB210 /* cmscgats.c */,
+				2A8B4BCF1A71C5DF009DB210 /* cmscnvrt.c */,
+				2A8B4BD01A71C5DF009DB210 /* cmserr.c */,
+				2A8B4BD11A71C5DF009DB210 /* cmsgamma.c */,
+				2A8B4BD21A71C5DF009DB210 /* cmsgmt.c */,
+				2A8B4BD31A71C5DF009DB210 /* cmsintrp.c */,
+				2A8B4BD41A71C5DF009DB210 /* cmsio1.c */,
+				2A8B4BD51A71C5DF009DB210 /* cmslut.c */,
+				2A8B4BD61A71C5DF009DB210 /* cmsmatsh.c */,
+				2A8B4BD71A71C5DF009DB210 /* cmsmtrx.c */,
+				2A8B4BD81A71C5DF009DB210 /* cmsnamed.c */,
+				2A8B4BD91A71C5DF009DB210 /* cmspack.c */,
+				2A8B4BDA1A71C5DF009DB210 /* cmspcs.c */,
+				2A8B4BDB1A71C5DF009DB210 /* cmsps2.c */,
+				2A8B4BDC1A71C5DF009DB210 /* cmssamp.c */,
+				2A8B4BDD1A71C5DF009DB210 /* cmsvirt.c */,
+				2A8B4BDE1A71C5DF009DB210 /* cmswtpnt.c */,
+				2A8B4BDF1A71C5DF009DB210 /* cmsxform.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		2AF56EE3147AD10E00F9968C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +332,9 @@
 		C4E6187C095A3C800012CA3F = {
 			isa = PBXGroup;
 			children = (
+				2A8B49011A6F2F13009DB210 /* main.cpp */,
+				2A8B49151A6F2F6B009DB210 /* share */,
+				2A8B4B341A71C5DF009DB210 /* lcms-1.14 */,
 				2AF56B95147A431100F9968C /* OpenColorIO_AE.h */,
 				2AF56B94147A431100F9968C /* OpenColorIO_AE.cpp */,
 				2AF57D1E147C994100F9968C /* OpenColorIO_AE_Context.h */,
@@ -215,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				C4E618CC095A3CE80012CA3F /* OpenColorIO.plugin */,
+				2A8B48FB1A6F2EF1009DB210 /* ociobakelut */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +382,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A8B48FA1A6F2EF1009DB210 /* ociobakelut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A8B49031A6F2F13009DB210 /* Build configuration list for PBXNativeTarget "ociobakelut" */;
+			buildPhases = (
+				2A8B48F81A6F2EF1009DB210 /* Sources */,
+				2A8B48F91A6F2EF1009DB210 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A8B49091A6F2F35009DB210 /* PBXTargetDependency */,
+				2A8B490B1A6F2F35009DB210 /* PBXTargetDependency */,
+				2A8B490D1A6F2F35009DB210 /* PBXTargetDependency */,
+				2A8B490F1A6F2F35009DB210 /* PBXTargetDependency */,
+			);
+			name = ociobakelut;
+			productName = ociobakelut;
+			productReference = 2A8B48FB1A6F2EF1009DB210 /* ociobakelut */;
+			productType = "com.apple.product-type.tool";
+		};
 		C4E618CB095A3CE80012CA3F /* OpenColorIO */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4E618CE095A3CE90012CA3F /* Build configuration list for PBXNativeTarget "OpenColorIO" */;
@@ -283,6 +463,7 @@
 			projectRoot = "";
 			targets = (
 				C4E618CB095A3CE80012CA3F /* OpenColorIO */,
+				2A8B48FA1A6F2EF1009DB210 /* ociobakelut */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +522,38 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A8B48F81A6F2EF1009DB210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8B49021A6F2F13009DB210 /* main.cpp in Sources */,
+				2A8B491C1A6F2F6B009DB210 /* argparse.cpp in Sources */,
+				2A8B491D1A6F2F6B009DB210 /* pystring.cpp in Sources */,
+				2A8B491E1A6F2F6B009DB210 /* strutil.cpp in Sources */,
+				2A8B49211A6F31CB009DB210 /* ocioicc.cpp in Sources */,
+				2A8B4C0C1A71C5DF009DB210 /* cmscam02.c in Sources */,
+				2A8B4C0D1A71C5DF009DB210 /* cmscam97.c in Sources */,
+				2A8B4C0E1A71C5DF009DB210 /* cmscgats.c in Sources */,
+				2A8B4C0F1A71C5DF009DB210 /* cmscnvrt.c in Sources */,
+				2A8B4C101A71C5DF009DB210 /* cmserr.c in Sources */,
+				2A8B4C111A71C5DF009DB210 /* cmsgamma.c in Sources */,
+				2A8B4C121A71C5DF009DB210 /* cmsgmt.c in Sources */,
+				2A8B4C131A71C5DF009DB210 /* cmsintrp.c in Sources */,
+				2A8B4C141A71C5DF009DB210 /* cmsio1.c in Sources */,
+				2A8B4C151A71C5DF009DB210 /* cmslut.c in Sources */,
+				2A8B4C161A71C5DF009DB210 /* cmsmatsh.c in Sources */,
+				2A8B4C171A71C5DF009DB210 /* cmsmtrx.c in Sources */,
+				2A8B4C181A71C5DF009DB210 /* cmsnamed.c in Sources */,
+				2A8B4C191A71C5DF009DB210 /* cmspack.c in Sources */,
+				2A8B4C1A1A71C5DF009DB210 /* cmspcs.c in Sources */,
+				2A8B4C1B1A71C5DF009DB210 /* cmsps2.c in Sources */,
+				2A8B4C1C1A71C5DF009DB210 /* cmssamp.c in Sources */,
+				2A8B4C1D1A71C5DF009DB210 /* cmsvirt.c in Sources */,
+				2A8B4C1E1A71C5DF009DB210 /* cmswtpnt.c in Sources */,
+				2A8B4C1F1A71C5DF009DB210 /* cmsxform.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4E618C9095A3CE80012CA3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +576,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2A8B49091A6F2F35009DB210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = tinyxml;
+			targetProxy = 2A8B49081A6F2F35009DB210 /* PBXContainerItemProxy */;
+		};
+		2A8B490B1A6F2F35009DB210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenColorIO;
+			targetProxy = 2A8B490A1A6F2F35009DB210 /* PBXContainerItemProxy */;
+		};
+		2A8B490D1A6F2F35009DB210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = lcms;
+			targetProxy = 2A8B490C1A6F2F35009DB210 /* PBXContainerItemProxy */;
+		};
+		2A8B490F1A6F2F35009DB210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yaml;
+			targetProxy = 2A8B490E1A6F2F35009DB210 /* PBXContainerItemProxy */;
+		};
 		2AF57013147AE18600F9968C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = tinyxml;
@@ -434,6 +667,52 @@
 			};
 			name = Release;
 		};
+		2A8B48FD1A6F2EF1009DB210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					../,
+					../../../../export,
+					../../../../src/core,
+					../../../../ext/tinyxml,
+					"../../../../ext/yaml-cpp/include",
+					"../../../../ext/lcms-1.14/include",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = ociobakelut;
+			};
+			name = Debug;
+		};
+		2A8B48FE1A6F2EF1009DB210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					../,
+					../../../../export,
+					../../../../src/core,
+					../../../../ext/tinyxml,
+					"../../../../ext/yaml-cpp/include",
+					"../../../../ext/lcms-1.14/include",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = ociobakelut;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C4E61880095A3C800012CA3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -485,6 +764,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A8B49031A6F2F13009DB210 /* Build configuration list for PBXNativeTarget "ociobakelut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A8B48FD1A6F2EF1009DB210 /* Debug */,
+				2A8B48FE1A6F2EF1009DB210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		C4E6187F095A3C800012CA3F /* Build configuration list for PBXProject "OpenColorIO_AE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

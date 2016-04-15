@@ -37,8 +37,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "ocioicc.h"
 
+
+#define USE_LCMS1
+
+#ifdef USE_LCMS1
+#include "lcms.h"
+#else
 #include "lcms2.h"
 #include "lcms2_plugin.h"
+#endif
+
 
 OCIO_NAMESPACE_ENTER
 {
@@ -46,11 +54,6 @@ OCIO_NAMESPACE_ENTER
 
 namespace
 {
-void ErrorHandler(cmsContext /*ContextID*/, cmsUInt32Number /*ErrorCode*/, const char *Text)
-{
-    std::cerr << "OCIO Error: " << Text << "\n";
-    return;
-}
 
 typedef struct
 {
@@ -59,6 +62,165 @@ typedef struct
     //OCIO::ConstProcessorRcPtr shaper_processor;
     OCIO::ConstProcessorRcPtr processor;
 } SamplerData;
+
+
+#ifdef USE_LCMS1
+
+int ErrorHandler(int ErrorCode, const char *ErrorText)
+{
+    std::cerr << "OCIO Error: " << ErrorText << "\n";
+    return 1;
+}
+
+static int Display2PCS_Sampler16(register WORD in[], register WORD out[], register LPVOID userdata)
+{
+    //std::cout << "r" << in[0] << " g" << in[1] << " b" << in[2] << "\n";
+    SamplerData* data = (SamplerData*) userdata;
+    float pix[3] = { static_cast<float>(in[0])/65535.f,
+                                static_cast<float>(in[1])/65535.f,
+                                static_cast<float>(in[2])/65535.f};
+    data->processor->applyRGB(pix);
+    out[0] = (unsigned short)std::max(std::min(pix[0] * 65535.f, 65535.f), 0.f);
+    out[1] = (unsigned short)std::max(std::min(pix[1] * 65535.f, 65535.f), 0.f);
+    out[2] = (unsigned short)std::max(std::min(pix[2] * 65535.f, 65535.f), 0.f);
+    cmsDoTransform(data->to_PCS16, out, out, 1);
+    return 1;
+}
+
+}  // anon namespace
+
+void SaveICCProfileToFile(const std::string & outputfile,
+                          ConstProcessorRcPtr & processor,
+                          int cubesize,
+                          int whitepointtemp,
+                          const std::string & displayicc,
+                          const std::string & description,
+                          const std::string & copyright,
+                          bool verbose)
+{
+
+    // Create the ICC Profile
+
+    // Setup the Error Handler
+    cmsSetErrorHandler(ErrorHandler);
+
+    // D65 white point
+    cmsCIExyY whitePoint;
+    cmsWhitePointFromTemp(whitepointtemp, &whitePoint);
+	
+	cmsCIEXYZ whitePointXYZ;
+	cmsxyY2XYZ(&whitePointXYZ, &whitePoint);
+	
+
+    // LAB PCS
+    cmsHPROFILE labProfile = cmsCreateLabProfile(&whitePoint);
+
+    // Display (OCIO sRGB cube -> LAB)
+    cmsHPROFILE DisplayProfile;
+    if(displayicc != "") DisplayProfile = cmsOpenProfileFromFile(displayicc.c_str(), "r");
+    else DisplayProfile = cmsCreate_sRGBProfile();
+
+
+    if(verbose)
+        std::cout << "[OpenColorIO INFO]: Setting up Profile: " << outputfile << "\n";
+
+    //
+    SamplerData data;
+    data.processor = processor;
+
+    // 16Bit
+    data.to_PCS16 = cmsCreateTransform(DisplayProfile, TYPE_RGB_16, labProfile, TYPE_Lab_16, INTENT_PERCEPTUAL, 0);
+    data.from_PCS16 = cmsCreateTransform(labProfile, TYPE_Lab_16, DisplayProfile, TYPE_RGB_16, INTENT_PERCEPTUAL, 0);
+
+	
+	LUT LutD;
+	LPLUT Lut = &LutD;
+				
+	WORD NullTbl[2] = { 0, 0xFFFFU};
+	
+	cmsAlloc3DGrid(Lut, cubesize, 3, 3);
+	
+    if(verbose)
+        std::cout << "[OpenColorIO INFO]: Sampling AToB0 CLUT from Display to Lab\n";
+		
+	cmsSample3DGrid(Lut, Display2PCS_Sampler16, (LPVOID) &data, 0);
+
+
+	// set up the LUT
+	Lut -> InputChan	= 3;
+	Lut -> OutputChan	= 3;
+
+
+	// this is just to make the setTag code happy
+	Lut -> InputEntries = 2;
+	Lut -> OutputEntries = 2;
+	
+	Lut -> L1[0] = Lut -> L1[1] = Lut -> L1[2] = NullTbl;
+	Lut -> L2[0] = Lut -> L2[1] = Lut -> L2[2] = NullTbl;
+	
+	cmsCalcL16Params(Lut -> InputEntries, &Lut -> In16params);
+	cmsCalcL16Params(Lut -> OutputEntries, &Lut -> Out16params);
+	
+	
+	// 3D LUT
+	Lut -> wFlags		= LUT_HAS3DGRID;  
+	Lut -> cLutPoints	= cubesize;
+	Lut -> Tsize = (Lut -> OutputChan * pow((double)Lut->cLutPoints,
+											(int)Lut->InputChan)
+											* sizeof(WORD));
+
+	cmsCalcCLUT16Params(Lut -> cLutPoints,  Lut -> InputChan,
+											  Lut -> OutputChan,
+											  &Lut -> CLut16params);
+
+
+    if(verbose)
+        std::cout << "[OpenColorIO INFO]: Making profile\n";
+
+	cmsHPROFILE hProfile = _cmsCreateProfilePlaceholder();
+	
+	cmsSetDeviceClass(hProfile,      icSigDisplayClass);
+	cmsSetColorSpace(hProfile,       icSigRgbData);
+	cmsSetPCS(hProfile,              icSigLabData);
+	cmsSetRenderingIntent(hProfile,  INTENT_PERCEPTUAL); 
+	
+	cmsAddTag(hProfile, icSigMediaWhitePointTag, (LPVOID)&whitePointXYZ);
+
+	cmsAddTag(hProfile, icSigAToB0Tag, (LPVOID)Lut);
+
+
+	cmsAddTag(hProfile, icSigProfileDescriptionTag, (LPVOID) description.c_str() );
+	cmsAddTag(hProfile, icSigCopyrightTag,			(LPVOID) copyright.c_str());
+	
+	
+    if(verbose)
+        std::cout << "[OpenColorIO INFO]: Writing " << outputfile << std::endl;
+
+	BOOL success = _cmsSaveProfile(hProfile, outputfile.c_str());
+
+	cmsDeleteTransform(data.to_PCS16);
+	cmsDeleteTransform(data.from_PCS16);
+	
+	cmsCloseProfile(labProfile);
+	cmsCloseProfile(DisplayProfile);
+	cmsCloseProfile(hProfile);
+
+    if(verbose)
+        std::cout << "[OpenColorIO INFO]: Finished\n";
+		
+	if(!success)
+		std::cerr << "[OpenColorIO Error]: Write failed!\n";
+}
+
+
+#else // USE_LCMS1
+
+
+void ErrorHandler(cmsContext /*ContextID*/, cmsUInt32Number /*ErrorCode*/, const char *Text)
+{
+    std::cerr << "OCIO Error: " << Text << "\n";
+    return;
+}
 
 static void Add3GammaCurves(cmsPipeline* lut, cmsFloat64Number Curve)
 {
@@ -104,6 +266,7 @@ static cmsInt32Number PCS2Display_Sampler16(const cmsUInt16Number in[], cmsUInt1
     // we don't have a reverse Lab -> Display transform
     return 1;
 }
+
 }  // anon namespace
 
 
@@ -246,6 +409,8 @@ void SaveICCProfileToFile(const std::string & outputfile,
     if(verbose)
         std::cout << "[OpenColorIO INFO]: Finished\n";
 }
+
+#endif // USE_LCMS1
 
 }
 OCIO_NAMESPACE_EXIT

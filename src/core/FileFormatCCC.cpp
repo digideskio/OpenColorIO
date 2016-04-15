@@ -164,10 +164,7 @@ OCIO_NAMESPACE_ENTER
             
             if(cccid.empty())
             {
-                std::ostringstream os;
-                os << "You must specify which cccid to load from the ccc file";
-                os << " (either by name or index).";
-                throw ExceptionMissingFile(os.str().c_str());
+                cccid = "0"; // just use a the first one, rather then return an error
             }
             
             bool success=false;
